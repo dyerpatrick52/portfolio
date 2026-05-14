@@ -1,0 +1,93 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #f0ebe1;
+  --surface: #e6eeea;
+  --surface-dark: #f4f7f5;
+  --accent: #6b8878;
+  --text: #1c2820;
+  --text-muted: #7e9287;
+  --border: #a9beb5;
+  --shadow: rgba(35, 65, 50, 0.6);
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+h2 {
+  font-family: var(--font-body);
+  font-size: 30pt;
+  margin: 20px;
+  color: var(--accent);
+  text-align: center;
+}
+
+p {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-family: var(--font-body);
+  font-size: 12pt;
+  padding: 8px 8px;
+}
+
+div[class$="-container"] {
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background-color: var(--surface);
+  margin: 30px 10px;
+  box-shadow: 0 6px 16px var(--shadow);
+}
+
+[class$="-link"] {
+  display: inline-block;
+  width: 100%;
+  transition: transform 0.2s ease;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+[class$="-link"]:hover {
+  transform: scale(1.05);  
+  cursor: pointer;
+}
+
+[class$="-grid"] div{
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+[class$="-grid"] div:hover{
+  transform: translateY(-4px);
+}
+
+
+
+
+h5 {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-family: var(--font-body);
+  font-size: 16pt;
+}
+
+i {
+  font-size: 3rem;
+}
+
+img {
+  width: 200px;
+  height: auto;
+  margin: 4px 4px;
+}
+
+h1 {
+  font-family: var(--font-display);
+}
