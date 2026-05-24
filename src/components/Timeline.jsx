@@ -46,7 +46,7 @@ const badgeStyle = {
 
 function Timeline() {
 	return (
-		<div className='timeline-container'>
+		<div id='timeline' className='timeline-container'>
 			<div className='timeline-education'>
 				{educations.map((education) => (
 					<div key={education.school} className='timeline-education-item'>
