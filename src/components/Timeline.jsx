@@ -25,35 +25,62 @@ function formatDate(dateStr) {
 	});
 }
 
+const cardStyle = {
+	border: '2px solid var(--border)',
+	borderRadius: '16px',
+	backgroundColor: 'var(--bg)',
+	margin: '20px',
+	boxShadow: '0 6px 16px var(--shadow)',
+};
+
+const badgeStyle = {
+	backgroundColor: 'var(--text-muted)',
+	border: '1px solid var(--border)',
+	borderRadius: '8px',
+	color: '#fff',
+	display: 'block',
+	textAlign: 'center',
+	margin: '4px 0',
+	whiteSpace: 'normal',
+};
+
 function Timeline() {
 	return (
 		<div className='timeline-container'>
 			<div className='timeline-education'>
 				{educations.map((education) => (
-					<div className='timeline-education-item'>
-						<div className='education-timeline-card'>
-							<h2>{education.school}</h2>
-							<p>
-								{education.degree} in {education.program}
-							</p>
-							<p>
-								{formatDate(education.start)} -{' '}
-								{formatDate(education.end)}
-							</p>
+					<div key={education.school} className='timeline-education-item'>
+						<div className='card' style={cardStyle}>
+							<div className='card-body'>
+								<h5 className='card-title' style={{ color: 'var(--text)', textDecoration: 'underline' }}>
+									{education.school}
+								</h5>
+								<span className='badge' style={badgeStyle}>
+									{education.degree} in {education.program}
+								</span>
+								<span className='badge' style={badgeStyle}>
+									{formatDate(education.start)} – {formatDate(education.end)}
+								</span>
+							</div>
 						</div>
 					</div>
 				))}
 			</div>
 			<div className='timeline-experience'>
 				{experiences.map((experience) => (
-					<div className='timeline-experience-item'>
-						<div className='experience-timeline-card'>
-							<h2>{experience.organization}</h2>
-							<p>{experience.title}</p>
-							<p>
-								{formatDate(experience.start)} -{' '}
-								{formatDate(experience.end)}
-							</p>
+					<div key={experience.organization} className='timeline-experience-item'>
+						<div className='card' style={cardStyle}>
+							<div className='card-body'>
+								<h5 className='card-title' style={{ color: 'var(--text)', textDecoration: 'underline' }}>
+									{experience.organization}
+								</h5>
+								<span className='badge' style={badgeStyle}>
+									{experience.title}
+								</span>
+								<span className='badge' style={badgeStyle}>
+									{formatDate(experience.start)} – {formatDate(experience.end)}
+								</span>
+							</div>
 						</div>
 					</div>
 				))}

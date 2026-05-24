@@ -1,11 +1,22 @@
+import uoscheduler from '../assets/uoscheduler.png';
+
 const projects = [
 	{
 		title: 'UOScheduler',
 		desc: 'Scheduler Generation/Planner for uOttawa Students',
 		tags: ['TypeScript', 'React', 'Algorithms'],
 		url: 'https://uoscheduler.ca/',
+		img: uoscheduler,
 	},
 ];
+
+const tagStyle = {
+	backgroundColor: 'rgba(255,255,255,0.15)',
+	border: '1px solid rgba(255,255,255,0.3)',
+	color: '#fff',
+	fontSize: '8pt',
+	fontFamily: 'var(--font-body)',
+};
 
 function Projects() {
 	return (
@@ -17,28 +28,66 @@ function Projects() {
 			</p>
 			<div className='projects-grid'>
 				{projects.map((project) => (
-					<div key={project.title} className='project-card'>
-						<a href={project.url} className='project-card-url'>
-							<div className='project-card-content'>
-								<h5 className='project-card-title'>
+					<a
+						key={project.title}
+						href={project.url}
+						className='text-decoration-none'
+					>
+						<div
+							className='card'
+							style={{
+								height: '220px',
+								border: '1px solid var(--border)',
+								borderRadius: '10px',
+								overflow: 'hidden',
+							}}
+						>
+							<img
+								src={project.img}
+								alt={project.title}
+								style={{
+									position: 'absolute',
+									inset: 0,
+									width: '100%',
+									height: '100%',
+									objectFit: 'cover',
+									opacity: 0.4,
+								}}
+							/>
+							<div
+								className='card-img-overlay d-flex flex-column justify-content-end p-3'
+								style={{
+									background:
+										'linear-gradient(transparent, rgba(28, 40, 32, 0.85))',
+								}}
+							>
+								<h5 className='card-title text-white mb-1'>
 									{project.title}
 								</h5>
-								<p className='project-card-desc'>
+								<p
+									className='card-text mb-2'
+									style={{
+										color: 'rgba(255,255,255,0.85)',
+										fontFamily: 'var(--font-body)',
+										fontSize: '9pt',
+									}}
+								>
 									{project.desc}
 								</p>
-								<div className='project-card-tags'>
+								<div className='d-flex flex-wrap gap-1'>
 									{project.tags.map((tag) => (
 										<span
 											key={tag}
-											className='project-card-tag'
+											className='badge rounded-pill'
+											style={tagStyle}
 										>
 											{tag}
 										</span>
 									))}
 								</div>
 							</div>
-						</a>
-					</div>
+						</div>
+					</a>
 				))}
 			</div>
 		</div>

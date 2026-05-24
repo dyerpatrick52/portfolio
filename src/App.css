@@ -82,6 +82,7 @@ body {
     border 0.3s ease,
     transform 1s ease;
   display: block;
+  width: 200px;
   border-radius: 20px;
   border: 2px solid var(--border);
   padding: 2px;
@@ -217,31 +218,6 @@ body {
   background-color: black;
 }
 
-div[class$="-timeline-card"] {
-  background-color: var(--bg);
-  border: 2px solid var(--border);
-  margin: 20px 20px;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px var(--shadow);
-}
-
-div[class$="-timeline-card"] p {
-  background-color: var(--text-muted);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: #fff;
-  text-align: center;
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
-div[class$="-timeline-card"] h2 {
-  font-size: 16pt;
-  font-weight: bold;
-  color: var(--text);
-  text-decoration: underline;
-}
-
 /* === Design Steps / Resources === */
 
 .design-steps-grid {
@@ -328,80 +304,15 @@ div[class$="-timeline-card"] h2 {
   gap: 10px;
 }
 
-.case-study-card {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  min-height: 220px;
-}
-
-.case-study-card::before {
-  background-image: url(./assets/coming-soon.jpg);
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  content: "";
-  inset: 0;
-  opacity: 0.4;
-  z-index: 0;
-}
-
-.case-study-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  background: linear-gradient(transparent, rgba(28, 40, 32, 0.85));
-  padding: 16px;
-  text-align: left;
-}
-
-.coming-soon-badge {
-  display: inline-block;
-  font-size: 9pt;
-  font-family: var(--font-body);
-  background-color: var(--accent);
-  color: #fff;
-  border-radius: 20px;
-  padding: 2px 10px;
-  margin-bottom: 8px;
-  letter-spacing: 0.04em;
-}
-
-.case-study-card-title {
-  color: #fff;
-  margin: 0 0 6px;
-  font-size: 14pt;
-}
-
-.case-study-card-desc {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 9pt;
-  margin: 0 0 10px;
-  padding-right: 20px;
-  font-family: var(--font-body);
-}
-
-.case-study-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.case-study-tag {
-  font-size: 8pt;
-  font-family: var(--font-body);
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  padding: 2px 8px;
-}
-
 /* === Projects === */
+
+.projects-grid a {
+  transition: transform 0.5s ease;
+}
+
+.projects-grid a:hover {
+  transform: translateY(-4px);
+}
 
 .projects-grid {
   display: grid;
@@ -410,67 +321,6 @@ div[class$="-timeline-card"] h2 {
   margin: 10px 10px;
   border-radius: 15px;
   gap: 10px;
-}
-
-.project-card {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  min-height: 220px;
-}
-
-.project-card::before {
-  background-image: url(./assets/uoscheduler.png);
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  content: "";
-  inset: 0;
-  opacity: 0.4;
-  z-index: 0;
-}
-
-.project-card-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  background: linear-gradient(transparent, rgba(28, 40, 32, 0.85));
-  padding: 16px;
-  text-align: left;
-}
-
-.project-card-title {
-  color: #fff;
-  margin: 0 0 6px;
-  font-size: 14pt;
-}
-
-.project-card-desc {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 9pt;
-  margin: 0 0 10px;
-  padding-right: 20px;
-  font-family: var(--font-body);
-}
-
-.project-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.project-card-tag {
-  font-size: 8pt;
-  font-family: var(--font-body);
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  padding: 2px 8px;
 }
 
 /* === Skills === */

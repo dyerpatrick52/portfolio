@@ -1,48 +1,82 @@
+import comingSoon from '../assets/coming-soon.jpg';
+
 const studies = [
-  {
-    title: "Service Site",
-    desc: "A service-oriented website designed for clear information hierarchy and ease of navigation.",
-    tags: ["UX Design", "HTML", "CSS"],
-  },
-  {
-    title: "Memory Game",
-    desc: "An interactive memory card game focused on responsive layout and smooth animations.",
-    tags: ["React", "CSS Animations", "Game Design"],
-  },
-  {
-    title: "E-commerce Site",
-    desc: "A product browsing and checkout experience built around user trust and conversion.",
-    tags: ["UX Research", "React", "Figma"],
-  },
-  {
-    title: "Analytics Site",
-    desc: "A data dashboard interface designed for readability and effective data visualization.",
-    tags: ["Data Viz", "React", "Dashboard"],
-  },
+	{
+		title: 'Service Site',
+		desc: 'A service-oriented website designed for clear information hierarchy and ease of navigation.',
+		tags: ['UX Design', 'HTML', 'CSS'],
+	},
+	{
+		title: 'Memory Game',
+		desc: 'An interactive memory card game focused on responsive layout and smooth animations.',
+		tags: ['React', 'CSS Animations', 'Game Design'],
+	},
+	{
+		title: 'E-commerce Site',
+		desc: 'A product browsing and checkout experience built around user trust and conversion.',
+		tags: ['UX Research', 'React', 'Figma'],
+	},
+	{
+		title: 'Analytics Site',
+		desc: 'A data dashboard interface designed for readability and effective data visualization.',
+		tags: ['Data Viz', 'React', 'Dashboard'],
+	},
 ];
 
+const tagStyle = {
+	backgroundColor: 'rgba(255,255,255,0.15)',
+	border: '1px solid rgba(255,255,255,0.3)',
+	color: '#fff',
+	fontSize: '8pt',
+	fontFamily: 'var(--font-body)',
+};
+
 function CaseStudies() {
-  return (
-    <div id="case-studies" className="case-studies-container">
-      <h2 className="case-studies-title">Case Studies</h2>
-      <div className="case-studies-grid">
-        {studies.map((study) => (
-          <div key={study.title} className="case-study-card">
-            <div className="case-study-content">
-              <span className="coming-soon-badge">Coming Soon</span>
-              <h5 className="case-study-card-title">{study.title}</h5>
-              <p className="case-study-card-desc">{study.desc}</p>
-              <div className="case-study-tags">
-                {study.tags.map((tag) => (
-                  <span key={tag} className="case-study-tag">{tag}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+	return (
+		<div id='case-studies' className='case-studies-container'>
+			<h2 className='case-studies-title'>Case Studies</h2>
+			<div className='case-studies-grid'>
+				{studies.map((study) => (
+					<div key={study.title} className='card' style={{ height: '220px', border: '1px solid var(--border)', borderRadius: '10px', overflow: 'hidden' }}>
+						<img
+							src={comingSoon}
+							alt=''
+							style={{
+								position: 'absolute',
+								inset: 0,
+								width: '100%',
+								height: '100%',
+								objectFit: 'cover',
+								opacity: 0.4,
+							}}
+						/>
+						<div
+							className='card-img-overlay d-flex flex-column justify-content-end p-3'
+							style={{ background: 'linear-gradient(transparent, rgba(28, 40, 32, 0.85))' }}
+						>
+							<span
+								className='badge rounded-pill align-self-start mb-2'
+								style={{ backgroundColor: 'var(--accent)', color: '#fff', fontFamily: 'var(--font-body)', fontSize: '9pt', letterSpacing: '0.04em' }}
+							>
+								Coming Soon
+							</span>
+							<h5 className='card-title text-white mb-1'>{study.title}</h5>
+							<p className='card-text mb-2' style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'var(--font-body)', fontSize: '9pt' }}>
+								{study.desc}
+							</p>
+							<div className='d-flex flex-wrap gap-1'>
+								{study.tags.map((tag) => (
+									<span key={tag} className='badge rounded-pill' style={tagStyle}>
+										{tag}
+									</span>
+								))}
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	);
 }
 
 export default CaseStudies;
