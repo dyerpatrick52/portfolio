@@ -1,14 +1,24 @@
+/* === Base === */
+
 body {
   margin: 0;
   padding: 0;
   background-color: var(--bg);
 }
 
+/* === Layout === */
+
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
+
+[id] {
+  scroll-margin-top: 52px;
+}
+
+/* === Navigation === */
 
 .site-nav {
   position: sticky;
@@ -35,6 +45,8 @@ body {
 .site-nav a:hover {
   color: var(--accent);
 }
+
+/* === Header / Hero === */
 
 .name-img {
   display: flex;
@@ -82,14 +94,6 @@ body {
   transform: scale(1.05);
 }
 
-.links-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 10px auto;
-  max-width: 500px;
-  padding: 0 20px;
-}
-
 .name {
   display: block;
   transition:
@@ -104,6 +108,24 @@ body {
 .name:hover {
   transform: scale(1.05);
   color: darkslategray;
+}
+
+.name-subtitle {
+  font-family: var(--font-body);
+  font-size: 10pt;
+  color: var(--text-muted);
+  text-align: left;
+  margin: 6px 20px 0;
+  max-width: 340px;
+  line-height: 1.5;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px auto;
+  max-width: 500px;
+  padding: 0 20px;
 }
 
 .resume-btn-wrapper {
@@ -135,15 +157,92 @@ body {
   transform: none;
 }
 
-.name-subtitle {
-  font-family: var(--font-body);
+.linkedin-link,
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: auto;
   font-size: 10pt;
-  color: var(--text-muted);
-  text-align: left;
-  margin: 6px 20px 0;
-  max-width: 340px;
-  line-height: 1.5;
+  font-weight: normal;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 20px;
+  padding: 6px 18px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+.linkedin-link:hover,
+.github-link:hover {
+  background-color: var(--accent);
+  color: #fff;
+  transform: none;
+}
+
+/* === Timeline === */
+
+.timeline-container {
+  position: relative;
+}
+
+.timeline-container::before {
+  content: '';
+  border-left: 2px solid black;
+  position: absolute;
+  height: 100%;
+  left: 50%;
+}
+
+.timeline-education-item {
+  position: relative;
+  padding-right: 55%;
+}
+
+.timeline-experience-item {
+  position: relative;
+  padding-left: 55%;
+}
+
+.timeline-education-item::before,
+.timeline-experience-item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+div[class$="-timeline-card"] {
+  background-color: var(--bg);
+  border: 2px solid var(--border);
+  margin: 20px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px var(--shadow);
+}
+
+div[class$="-timeline-card"] p {
+  background-color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+div[class$="-timeline-card"] h2 {
+  font-size: 16pt;
+  font-weight: bold;
+  color: var(--text);
+  text-decoration: underline;
+}
+
+/* === Design Steps / Resources === */
 
 .design-steps-grid {
   display: grid;
@@ -206,10 +305,6 @@ body {
   gap: 10px;
 }
 
-.resource-2-img {
-  margin: 30px 10px 30px 10px;
-}
-
 .resources-grid div {
   background-color: var(--surface-dark);
   border: 1px solid var(--border);
@@ -217,6 +312,12 @@ body {
   font-size: 10pt;
   text-align: center;
 }
+
+.resource-2-img {
+  margin: 30px 10px 30px 10px;
+}
+
+/* === Case Studies === */
 
 .case-studies-grid {
   display: grid;
@@ -300,10 +401,7 @@ body {
   padding: 2px 8px;
 }
 
-[id] {
-  scroll-margin-top: 52px;
-}
-
+/* === Projects === */
 
 .projects-grid {
   display: grid;
@@ -322,7 +420,6 @@ body {
   border-radius: 10px;
   min-height: 220px;
 }
-
 
 .project-card::before {
   background-image: url(./assets/uoscheduler.png);
@@ -376,6 +473,47 @@ body {
   padding: 2px 8px;
 }
 
+/* === Skills === */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+  margin: 10px;
+  gap: 10px;
+}
+
+.skills-grid div {
+  background-color: var(--surface-dark);
+  border: 1px solid var(--border);
+  padding: 20px 16px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.skills-grid .skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.skill-chip {
+  font-size: 9pt;
+  font-family: var(--font-body);
+  background-color: var(--accent);
+  color: var(--bg);
+  border-radius: 20px;
+  padding: 4px 14px;
+  letter-spacing: 0.03em;
+}
+
+/* === Footer === */
 
 .footer {
   margin-top: 40px;
@@ -445,10 +583,13 @@ body {
   font-family: var(--font-body);
 }
 
+/* === Responsive === */
+
 /* Tablet: collapse 3-col grids to 2 */
 @media (max-width: 768px) {
   .design-steps-grid,
-  .resources-grid {
+  .resources-grid,
+  .skills-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -462,7 +603,8 @@ body {
 
   .design-steps-grid,
   .resources-grid,
-  .case-studies-grid {
+  .case-studies-grid,
+  .skills-grid {
     grid-template-columns: 1fr;
   }
 
@@ -482,27 +624,4 @@ body {
   .site-nav {
     gap: 16px;
   }
-}
-
-.linkedin-link,
-.github-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  width: auto;
-  font-size: 10pt;
-  font-weight: normal;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-  border-radius: 20px;
-  padding: 6px 18px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.linkedin-link:hover,
-.github-link:hover {
-  background-color: var(--accent);
-  color: #fff;
-  transform: none;
 }
