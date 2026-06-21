@@ -1,5 +1,6 @@
 import comingSoon from '../assets/coming-soon.jpg';
 import centretownCycles from '../assets/centretowncycles.png';
+import memgame from '../assets/memgame.png'
 
 const studies = [
 	{
@@ -13,6 +14,8 @@ const studies = [
 		title: 'Memory Game',
 		desc: 'An interactive memory card game focused on responsive layout and smooth animations.',
 		tags: ['React', 'CSS Animations', 'Game Design'],
+		image: memgame,
+		link: 'https://pairplaymemorygame.netlify.app/',
 	},
 	{
 		title: 'E-commerce Site',
