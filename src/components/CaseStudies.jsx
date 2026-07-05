@@ -1,6 +1,7 @@
 import comingSoon from '../assets/coming-soon.jpg';
 import centretownCycles from '../assets/centretowncycles.png';
-import memgame from '../assets/memgame.png'
+import memgame from '../assets/memgame.png';
+import pageturn from '../assets/pageturn.png';;
 
 const studies = [
 	{
@@ -18,9 +19,11 @@ const studies = [
 		link: 'https://pairplaymemorygame.netlify.app/',
 	},
 	{
-		title: 'E-commerce Site',
+		title: 'Page Turn',
 		desc: 'A product browsing and checkout experience built around user trust and conversion.',
 		tags: ['UX Research', 'React', 'Figma'],
+		image: pageturn,
+		link: 'https://patrickspageturn.netlify.app/',
 	},
 	{
 		title: 'Analytics Site',
