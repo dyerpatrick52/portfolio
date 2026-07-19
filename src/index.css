@@ -10,14 +10,15 @@ html {
   --text: #1c2820;
   --text-muted: #7e9287;
   --border: #a9beb5;
-  --shadow: rgba(35, 65, 50, 0.6);
+  --shadow: rgba(60, 80, 70, 0.18);
+  --shadow-hover: rgba(60, 80, 70, 0.28);
   --font-display: Georgia, 'Times New Roman', serif;
   --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 h2 {
   font-family: var(--font-body);
-  font-size: 30pt;
+  font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
   margin: 20px;
   color: var(--accent);
   text-align: center;
@@ -37,6 +38,11 @@ div[class$="-container"] {
   background-color: var(--surface);
   margin: 30px 10px;
   box-shadow: 0 6px 16px var(--shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+div[class$="-container"]:hover {
+  box-shadow: 0 10px 24px var(--shadow-hover);
 }
 
 [class$="-link"] {

@@ -25,40 +25,21 @@ function formatDate(dateStr) {
 	});
 }
 
-const cardStyle = {
-	border: '2px solid var(--border)',
-	borderRadius: '16px',
-	backgroundColor: 'var(--bg)',
-	margin: '20px',
-	boxShadow: '0 6px 16px var(--shadow)',
-};
-
-const badgeStyle = {
-	backgroundColor: 'var(--text-muted)',
-	border: '1px solid var(--border)',
-	borderRadius: '8px',
-	color: '#fff',
-	display: 'block',
-	textAlign: 'center',
-	margin: '4px 0',
-	whiteSpace: 'normal',
-};
-
 function Timeline() {
 	return (
 		<div id='timeline' className='timeline-container'>
 			<div className='timeline-education'>
 				{educations.map((education) => (
 					<div key={education.school} className='timeline-education-item'>
-						<div className='card' style={cardStyle}>
+						<div className='card timeline-card'>
 							<div className='card-body'>
-								<h5 className='card-title' style={{ color: 'var(--text)', textDecoration: 'underline' }}>
+								<h5 className='card-title timeline-card-title'>
 									{education.school}
 								</h5>
-								<span className='badge' style={badgeStyle}>
+								<span className='badge timeline-badge'>
 									{education.degree} in {education.program}
 								</span>
-								<span className='badge' style={badgeStyle}>
+								<span className='badge timeline-badge'>
 									{formatDate(education.start)} – {formatDate(education.end)}
 								</span>
 							</div>
@@ -69,15 +50,15 @@ function Timeline() {
 			<div className='timeline-experience'>
 				{experiences.map((experience) => (
 					<div key={experience.organization} className='timeline-experience-item'>
-						<div className='card' style={cardStyle}>
+						<div className='card timeline-card'>
 							<div className='card-body'>
-								<h5 className='card-title' style={{ color: 'var(--text)', textDecoration: 'underline' }}>
+								<h5 className='card-title timeline-card-title'>
 									{experience.organization}
 								</h5>
-								<span className='badge' style={badgeStyle}>
+								<span className='badge timeline-badge'>
 									{experience.title}
 								</span>
-								<span className='badge' style={badgeStyle}>
+								<span className='badge timeline-badge'>
 									{formatDate(experience.start)} – {formatDate(experience.end)}
 								</span>
 							</div>

@@ -35,14 +35,6 @@ const studies = [
 	},
 ];
 
-const tagStyle = {
-	backgroundColor: 'rgba(255,255,255,0.15)',
-	border: '1px solid rgba(255,255,255,0.3)',
-	color: '#fff',
-	fontSize: '8pt',
-	fontFamily: 'var(--font-body)',
-};
-
 function CaseStudies() {
 	return (
 		<div id='case-studies' className='case-studies-container'>
@@ -54,37 +46,24 @@ function CaseStudies() {
 							<img
 								src={study.image ?? comingSoon}
 								alt=''
-								style={{
-									position: 'absolute',
-									inset: 0,
-									width: '100%',
-									height: '100%',
-									objectFit: 'cover',
-									opacity: study.image ? 0.7 : 0.4,
-								}}
+								className={`media-card-img${study.image ? '' : ' media-card-img--dim'}`}
 							/>
-							<div
-								className='card-img-overlay d-flex flex-column justify-content-end p-3'
-								style={{ background: 'linear-gradient(transparent, rgba(28, 40, 32, 0.85))' }}
-							>
+							<div className='media-card-overlay'>
 								{!study.link && (
-									<span
-										className='badge rounded-pill align-self-start mb-2'
-										style={{ backgroundColor: 'var(--accent)', color: '#fff', fontFamily: 'var(--font-body)', fontSize: '9pt', letterSpacing: '0.04em' }}
-									>
+									<span className='badge rounded-pill media-card-badge-soon'>
 										Coming Soon
 									</span>
 								)}
-								<h5 className='card-title text-white mb-1'>{study.title}</h5>
-								<p className='card-text mb-2' style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'var(--font-body)', fontSize: '9pt' }}>
-									{study.desc}
-								</p>
-								<div className='d-flex flex-wrap gap-1'>
-									{study.tags.map((tag) => (
-										<span key={tag} className='badge rounded-pill' style={tagStyle}>
-											{tag}
-										</span>
-									))}
+								<h5 className='media-card-title'>{study.title}</h5>
+								<div className='media-card-details'>
+									<p className='media-card-desc'>{study.desc}</p>
+									<div className='media-card-tags'>
+										{study.tags.map((tag) => (
+											<span key={tag} className='badge rounded-pill media-card-tag'>
+												{tag}
+											</span>
+										))}
+									</div>
 								</div>
 							</div>
 						</>
@@ -96,13 +75,12 @@ function CaseStudies() {
 							href={study.link}
 							target='_blank'
 							rel='noopener noreferrer'
-							className='card'
-							style={{ height: '220px', border: '1px solid var(--border)', borderRadius: '10px', overflow: 'hidden', textDecoration: 'none', cursor: 'pointer' }}
+							className='media-card'
 						>
 							{cardContent}
 						</a>
 					) : (
-						<div key={study.title} className='card' style={{ height: '220px', border: '1px solid var(--border)', borderRadius: '10px', overflow: 'hidden' }}>
+						<div key={study.title} className='media-card'>
 							{cardContent}
 						</div>
 					);
