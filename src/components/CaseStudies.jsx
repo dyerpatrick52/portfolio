@@ -1,7 +1,8 @@
 import comingSoon from '../assets/coming-soon.jpg';
 import centretownCycles from '../assets/centretowncycles.png';
 import memgame from '../assets/memgame.png';
-import pageturn from '../assets/pageturn.png';;
+import pageturn from '../assets/pageturn.png';
+import enrolLens from '../assets/enrollens.png';
 
 const studies = [
 	{
@@ -29,6 +30,8 @@ const studies = [
 		title: 'Analytics Site',
 		desc: 'A data dashboard interface designed for readability and effective data visualization.',
 		tags: ['Data Viz', 'React', 'Dashboard'],
+		image: enrolLens,
+		link: 'https://enrol-lens.netlify.app/',
 	},
 ];
 
